@@ -37,7 +37,14 @@ const style = StyleSheet.create({
         justifyContent: 'center', 
         alignItems: 'center' ,
         height: '50%'
+    },
+    btnReiniciar: {
+        backgroundColor: 'gray',
+        padding: 20,
+        marginBottom: 10,
+        borderRadius: 10,
     }
+
 });
 
 export default style;

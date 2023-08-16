@@ -69,6 +69,9 @@ function Game() {
   }
 
   function jumpTo(nextMove) {
+    if (nextove === 0) {
+      setHistory([Array(9).fill (null)])
+    }
     setCurrentMove(nextMove);
   }
 
@@ -77,10 +80,14 @@ function Game() {
     if (move > 0) {
       description = 'Volte para o movimento #' + move;
     } else {
-      description = 'Voltar para o início do jogo';
+      description = 'Iniciar novo jogo';
     }
     return (      
-      <TouchableOpacity onPress={() => jumpTo(move)} key={move}>
+      <TouchableOpacity 
+          onPress={() => jumpTo(move)}
+          key={move} 
+          style= { move == 0 ? styles.btnReiniciar : null}
+         >
         <Text style={styles.historico}>{description}</Text>
       </TouchableOpacity>
     );
